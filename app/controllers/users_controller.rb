@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       return if session[:current_user].nil?
   
       flash[:notice] = 'Already signed in, sign out if you want to reconnect as another user'
-      redirect_to root_path
+      redirect_to '/'
       false
     end
   
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:current_user] = @user.username
         session[:current_user_id] = @user.id
-        redirect_to root_path
+        redirect_to '/'
       else
         flash[:notice] = 'This username is already taken, choose another one'
         render :new
@@ -34,15 +34,15 @@ class UsersController < ApplicationController
   
       @user = User.find_by(username: params[:username])
       if @user.nil?
-        flash[:error] = 'Incorrect username, please try again'
+        flash[:notice] = 'Incorrect username, please try again'
         redirect_to sign_in_path
       elsif @user.password != params[:password]
-        flash[:error] = 'Incorrect password, please try again'
+        flash[:notice] = 'Incorrect password, please try again'
         redirect_to sign_in_path
       else
         session[:current_user] = @user.username
         session[:current_user_id] = @user.id
-        redirect_to root_path
+        redirect_to '/'
       end
     end
   
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       else
         session[:current_user] = nil
         session[:current_user_id] = nil
-        redirect_to root_path
+        redirect_to '/'
       end
     end
   
