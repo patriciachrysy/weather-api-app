@@ -10,7 +10,6 @@
   <h3 align="center">Weather API Service</h3>
 
   <p align="center">
-    This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
     <br />
     <a href="https://github.com/patriciachrysy/weather-api-app.git"><strong>Explore the docs »</strong></a>
     <br />
