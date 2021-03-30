@@ -41,7 +41,7 @@ Ruby on Rails was choosen firstly because it way faster than the other backend f
 ### Date
 Submitted on the 03rd March 2021
 ### Location of deployed application
-The app was deployed on Heroku server at the address [!weather_api_app]()
+The app was deployed on Heroku server at the address ![weather_api_app](https://sleepy-waters-25554.herokuapp.com/)
 ### Time spent
 I spent 4 hours working on this test
 ### Assumptions made
