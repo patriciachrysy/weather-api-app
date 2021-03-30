@@ -1,4 +1,4 @@
-<h1>Welcome to OpenWeather <%= current_user %> </h1>
+<h2>Welcome to OpenWeather <%= current_user %> </h2>
 
 <% if signed_in? %>
     <div class="buttons">
@@ -7,15 +7,17 @@
     <%= link_to 'Sign In', sign_in_path, class: "button-link" %>
     <%= link_to 'Sign Up', sign_up_path, class: "button-link" %>
 <% else %>
-    <h3>How it works</h3>
-    <p> You can use <a href="#">Postman</a> to test the API</p>
-    <p> 
-        In Postman app, just type the request as follows as a <b>GET</b> request: 
-        <code>http://localhost:3000/api/v1/weather?city=MyCity</code>
+    <div class="buttons">
+        <h3>How it works</h3>
+        <p> You can use <a href="https://www.postman.com/">Postman</a> to test the API</p>
+        <p> 
+            In Postman app, just type the request as follows as a <b>GET</b> request: <br>
+            <code>http://localhost:3000/api/v1/weather?city=MyCity</code><br>
 
-        <span>Replace <b>MyCity</b> with whatever city name you want the weather from and there you go</span>
+            <span>Replace <b>MyCity</b> with whatever city name you want the weather from and there you go</span>
 
-    </p>
+        </p>
+    </div>
 
-    <%= link_to 'Sign Out', sign_out_path, class: "button-link" %>
+    <%= link_to 'Sign Out', sign_out_path, class: "discreet-link" %>
 <% end %>
