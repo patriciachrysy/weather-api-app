@@ -9,4 +9,5 @@ Rails.application.routes.draw do
       get '/weather' => 'weather#get_weather'
     end
   end
+  root 'users#index'
 end

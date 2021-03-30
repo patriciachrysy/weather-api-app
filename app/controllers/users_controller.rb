@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
-    before_action :user_already_signed_in, except: %i[sign_out show]
+    before_action :user_already_signed_in, except: %i[sign_out show index]
   
     def user_already_signed_in
       return if session[:current_user].nil?
   
       flash[:notice] = 'Already signed in, sign out if you want to reconnect as another user'
-      redirect_to '/'
+      redirect_to root_path
       false
+    end
+
+    def index
+      User.all
     end
   
     def new
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:current_user] = @user.username
         session[:current_user_id] = @user.id
-        redirect_to '/'
+        redirect_to root_path
       else
         flash[:notice] = 'This username is already taken, choose another one'
         render :new
@@ -42,7 +46,7 @@ class UsersController < ApplicationController
       else
         session[:current_user] = @user.username
         session[:current_user_id] = @user.id
-        redirect_to '/'
+        redirect_to root_path
       end
     end
   
@@ -53,7 +57,7 @@ class UsersController < ApplicationController
       else
         session[:current_user] = nil
         session[:current_user_id] = nil
-        redirect_to '/'
+        redirect_to root_path
       end
     end
   
