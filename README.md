@@ -45,7 +45,7 @@ The app was deployed on Heroku server at the address [weather_api_app](https://s
 ### Time spent
 I spent 4 hours working on this test
 ### Assumptions made
-Use this section to tell us about any assumptions that you made when creating your solution.
+I assumed that the service should be accessible only to authenticated users and that all the weather data provided by OpenWeather Api should be returned in JSON format when the API is called.
 ### Shortcuts/Compromises made
 I choose to create my own authentication system and could not have enough time to make it perfect. I think that could have been done better in a real world application. It would have also been better to add a JWT authentication to the API for security.
 ### Stretch goals attempted
