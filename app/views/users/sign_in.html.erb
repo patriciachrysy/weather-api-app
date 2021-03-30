@@ -1,0 +1,21 @@
+<h1> Sign In </h1>
+<p> Please provide your credencials for authentication </p>
+<div class="form-view">
+    <%= form_with(url: '/sign_in') do |f| %>
+        <div class="form-group">
+            <%= f.label :username, class: "form-label" %>
+            <%= f.text_field :username, class: "form-field" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, class: "form-field" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.submit 'Submit', class: "button-link" %>
+            <%= link_to 'Sign Up', sign_up_path, class: "discreet-link" %>
+        </div>
+
+    <% end %>
+</div>

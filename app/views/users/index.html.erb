@@ -1,0 +1,23 @@
+<h2>Welcome to OpenWeather <%= current_user %> </h2>
+<span>Get weather informations from any city in the world in JSON format<span>
+<% if signed_in? %>
+    <div class="buttons">
+        <p>Please sign in / signup to get access to the API and it's features</p>
+    </div>
+    <%= link_to 'Sign In', sign_in_path, class: "button-link" %>
+    <%= link_to 'Sign Up', sign_up_path, class: "button-link" %>
+<% else %>
+    <div class="buttons">
+        <h3>How it works</h3>
+        <p> You can use <a href="https://www.postman.com/">Postman</a> to test the API</p>
+        <p> 
+            In Postman app, just type the request as follows as a <b>GET</b> request: <br>
+            <code>http://localhost:3000/api/v1/weather?city=MyCity</code><br>
+
+            <span>Replace <b>MyCity</b> with whatever city name you want the weather from and there you go</span>
+
+        </p>
+    </div>
+
+    <%= link_to 'Sign Out', sign_out_path, class: "discreet-link" %>
+<% end %>
